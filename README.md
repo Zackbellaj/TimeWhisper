@@ -1,15 +1,46 @@
 # 🕰️ TimeWhisper
 
-**TimeWhisper** est une application web interactive qui permet à l’utilisateur de poser des questions orales sur des événements historiques (ex : *"Que s’est-il passé à Paris en 1889 ?"*) et d’obtenir une réponse vocale et visuelle.
+TimeWhisper est une application web interactive qui permettra aux utilisateurs de poser des questions orales sur des événements historiques et d’obtenir des réponses **vocales et visuelles**.
 
 ---
 
-## 🎯 Objectif
-Rendre l’histoire accessible et immersive grâce à :
-- La **reconnaissance vocale**
-- La **génération contextuelle (IA/NLP)**
-- L’affichage **visuel et chronologique** des événements
+## Objectif
+
+- Fournir des résumés historiques fiables  
+- Relier documents d’archives  
+- Afficher les événements sur une **timeline interactive**  
 
 ---
 
-## 🧱 Structure du projet
+## Public cible
+
+- Étudiants
+
+---
+
+## Technologies prévues
+
+- **Front-end :** HTML5, CSS3, JavaScript, TypeScript, React, Bootstrap / TailwindCSS  
+- **Back-end :** PHP / Laravel  
+- **Base de données :** MongoDB  
+- **API :** REST API  
+- **Données et multimédia :** JSON / XML, D3.js (visualisation de données), WebRTC (communication temps réel)  
+- **Outils :** Git / GitHub / GitLab  
+- **IA / NLP :** Whisper API (transcription vocale), Llama (génération contextuelle), No-code / Low-code
+
+---
+
+## Fonctionnalités prévues
+
+- Moteur de recherche  
+- Carte interactive  
+- Système de filtres et tris  
+- Chatbot ou assistant virtuel  
+- Timeline dynamique  
+- Galerie multimédia  
+
+---
+
+## Lien du projet
+
+[GitHub Repository](https://github.com/Zackbellaj/TimeWhisper)
