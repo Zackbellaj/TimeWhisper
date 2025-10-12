@@ -87,6 +87,14 @@ erDiagram
     ANSWER ||--|{ EVENT : "fait référence à"
     EVENT ||--o{ MEDIA : "contient"
 ```
+> **Prompt utilisé pour générer ce README :**  
+> "Créer un README pour le projet TimeWhisper, une application web permettant de poser des questions orales sur des événements historiques et d’obtenir des réponses vocales et visuelles.  
+> Front-end : React + TailwindCSS.  
+> Back-end : PHP / Laravel.  
+> Base de données : MongoDB.  
+> API REST et modules IA/NLP (Whisper pour transcription vocale, Llama pour génération contextuelle).  
+> Inclure : description, objectifs, public cible, technologies, fonctionnalités prévues et un diagramme Entité-Relation (Mermaid) représentant utilisateurs, questions, réponses, événements et médias."
+
 ## Lien du projet
 
 [GitHub Repository](https://github.com/Zackbellaj/TimeWhisper)
