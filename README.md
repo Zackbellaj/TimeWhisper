@@ -40,7 +40,53 @@ TimeWhisper est une application web interactive qui permettra aux utilisateurs d
 - Galerie multimédia  
 
 ---
+## Diagramme Entité-Relation
 
+```mermaid
+erDiagram
+    USER {
+        int id PK
+        string name
+        string email
+        string role
+    }
+
+    QUESTION {
+        int id PK
+        int user_id FK
+        string content
+        datetime created_at
+    }
+
+    ANSWER {
+        int id PK
+        int question_id FK
+        string content
+        string audio_url
+        datetime created_at
+    }
+
+    EVENT {
+        int id PK
+        string title
+        date start_date
+        date end_date
+        string location
+        string description
+    }
+
+    MEDIA {
+        int id PK
+        int event_id FK
+        string type
+        string url
+    }
+
+    USER ||--o{ QUESTION : "pose"
+    QUESTION ||--o{ ANSWER : "reçoit"
+    ANSWER ||--|{ EVENT : "fait référence à"
+    EVENT ||--o{ MEDIA : "contient"
+```
 ## Lien du projet
 
 [GitHub Repository](https://github.com/Zackbellaj/TimeWhisper)
