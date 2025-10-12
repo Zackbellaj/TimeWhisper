@@ -1,4 +1,4 @@
-# 🕰️ TimeWhisper
+# TimeWhisper
 
 TimeWhisper est une application web interactive qui permettra aux utilisateurs de poser des questions orales sur des événements historiques et d’obtenir des réponses **vocales et visuelles**.
 
