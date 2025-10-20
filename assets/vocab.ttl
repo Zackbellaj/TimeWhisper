@@ -1,0 +1,207 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix o:       <http://omeka.org/s/vocabs/o#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix tw:      <https://timewhisper.app/onto/tw#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix ma:      <http://www.w3.org/ns/ma-ont#> .
+
+<https://timewhisper.app/onto/tw#> a owl:Ontology ;
+    dcterms:title "TimeWhisper Ontology"@en ;
+    dcterms:title "Ontologie TimeWhisper"@fr ;
+    dcterms:creator "Bellaj Zakariae" ;
+    dcterms:created "2025-10-20"^^xsd:date ;
+    dcterms:description "Vocabulaire RDF pour la modélisation des événements historiques, des sources, et des interactions vocales dans l’application TimeWhisper."@fr ;
+    owl:versionInfo "v0.1-experimental" ;
+    dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> .
+
+######################################################################
+### CLASSES
+######################################################################
+
+tw:HistoricalEvent a rdfs:Class ;
+    rdfs:label "Événement historique"@fr ;
+    rdfs:label "Historical Event"@en ;
+    rdfs:comment "Un événement historique survenu à un lieu et une date donnée."@fr ;
+    vs:term_status "experimental" .
+
+tw:Location a rdfs:Class ;
+    rdfs:label "Lieu"@fr ;
+    rdfs:label "Location"@en ;
+    rdfs:comment "Un lieu géographique associé à un événement historique."@fr ;
+    vs:term_status "experimental" .
+
+tw:Person a rdfs:Class ;
+    rdfs:label "Personne historique"@fr ;
+    rdfs:label "Historical Person"@en ;
+    rdfs:comment "Individu impliqué dans un événement historique."@fr ;
+    vs:term_status "experimental" .
+
+tw:Document a rdfs:Class ;
+    rdfs:label "Document d’archive"@fr ;
+    rdfs:label "Archive Document"@en ;
+    rdfs:comment "Une source primaire ou secondaire (texte, image, son, vidéo) liée à un événement."@fr ;
+    rdfs:subClassOf ma:MediaResource ;
+    vs:term_status "experimental" .
+
+tw:UserQuery a rdfs:Class ;
+    rdfs:label "Question utilisateur"@fr ;
+    rdfs:label "User Query"@en ;
+    rdfs:comment "Une requête orale ou textuelle posée par l’utilisateur à TimeWhisper."@fr ;
+    vs:term_status "experimental" .
+
+tw:Response a rdfs:Class ;
+    rdfs:label "Réponse générée"@fr ;
+    rdfs:label "Generated Response"@en ;
+    rdfs:comment "Réponse contextuelle (texte, audio, visuel) produite par TimeWhisper."@fr ;
+    vs:term_status "experimental" .
+
+tw:Timeline a rdfs:Class ;
+    rdfs:label "Frise chronologique"@fr ;
+    rdfs:label "Timeline"@en ;
+    rdfs:comment "Représentation interactive des événements historiques liés à une requête."@fr ;
+    vs:term_status "experimental" .
+
+tw:Transcript a rdfs:Class ;
+    rdfs:label "Transcription vocale"@fr ;
+    rdfs:label "Speech Transcript"@en ;
+    rdfs:comment "Texte transcrit à partir d’une requête vocale de l’utilisateur."@fr ;
+    vs:term_status "experimental" .
+
+tw:AudioResponse a rdfs:Class ;
+    rdfs:label "Réponse audio"@fr ;
+    rdfs:label "Audio Response"@en ;
+    rdfs:comment "Version audio de la réponse générée."@fr ;
+    rdfs:subClassOf tw:Response ;
+    vs:term_status "experimental" .
+
+######################################################################
+### PROPRIÉTÉS
+######################################################################
+
+tw:hasDate a rdf:Property ;
+    rdfs:label "a pour date"@fr ;
+    rdfs:domain tw:HistoricalEvent ;
+    rdfs:range xsd:date ;
+    vs:term_status "experimental" .
+
+tw:hasLocation a rdf:Property ;
+    rdfs:label "a pour lieu"@fr ;
+    rdfs:domain tw:HistoricalEvent ;
+    rdfs:range tw:Location ;
+    vs:term_status "experimental" .
+
+tw:involvesPerson a rdf:Property ;
+    rdfs:label "implique la personne"@fr ;
+    rdfs:domain tw:HistoricalEvent ;
+    rdfs:range tw:Person ;
+    vs:term_status "experimental" .
+
+tw:relatedDocument a rdf:Property ;
+    rdfs:label "document lié"@fr ;
+    rdfs:domain tw:HistoricalEvent ;
+    rdfs:range tw:Document ;
+    vs:term_status "experimental" .
+
+tw:hasTranscript a rdf:Property ;
+    rdfs:label "a comme transcription"@fr ;
+    rdfs:domain tw:UserQuery ;
+    rdfs:range tw:Transcript ;
+    vs:term_status "experimental" .
+
+tw:hasResponse a rdf:Property ;
+    rdfs:label "a comme réponse"@fr ;
+    rdfs:domain tw:UserQuery ;
+    rdfs:range tw:Response ;
+    vs:term_status "experimental" .
+
+tw:hasAudioResponse a rdf:Property ;
+    rdfs:label "a comme réponse audio"@fr ;
+    rdfs:domain tw:UserQuery ;
+    rdfs:range tw:AudioResponse ;
+    vs:term_status "experimental" .
+
+tw:displayOnTimeline a rdf:Property ;
+    rdfs:label "affiché sur la frise chronologique"@fr ;
+    rdfs:domain tw:HistoricalEvent ;
+    rdfs:range tw:Timeline ;
+    vs:term_status "experimental" .
+
+tw:generatedAt a rdf:Property ;
+    rdfs:label "généré à"@fr ;
+    rdfs:domain tw:Response ;
+    rdfs:range xsd:dateTime ;
+    vs:term_status "experimental" .
+
+tw:confidenceScore a rdf:Property ;
+    rdfs:label "score de confiance"@fr ;
+    rdfs:domain tw:Response ;
+    rdfs:range xsd:float ;
+    vs:term_status "experimental" .
+
+tw:summaryText a rdf:Property ;
+    rdfs:label "texte du résumé"@fr ;
+    rdfs:domain tw:Response ;
+    rdfs:range xsd:string ;
+    vs:term_status "experimental" .
+
+tw:audioFile a rdf:Property ;
+    rdfs:label "fichier audio"@fr ;
+    rdfs:domain tw:AudioResponse ;
+    rdfs:range xsd:anyURI ;
+    vs:term_status "experimental" .
+
+tw:imageURL a rdf:Property ;
+    rdfs:label "image illustrant l'événement"@fr ;
+    rdfs:domain tw:HistoricalEvent ;
+    rdfs:range xsd:anyURI ;
+    vs:term_status "experimental" .
+
+tw:geoCoordinates a rdf:Property ;
+    rdfs:label "coordonnées géographiques"@fr ;
+    rdfs:domain tw:Location ;
+    rdfs:range xsd:string ;
+    vs:term_status "experimental" .
+
+tw:placeName a rdf:Property ;
+    rdfs:label "nom du lieu"@fr ;
+    rdfs:domain tw:Location ;
+    rdfs:range xsd:string ;
+    vs:term_status "experimental" .
+
+######################################################################
+### EXEMPLE D’UTILISATION
+######################################################################
+
+# Exemple : "Que s’est-il passé à Paris en 1889 ?"
+tw:query1 a tw:UserQuery ;
+    rdfs:label "Question : Que s’est-il passé à Paris en 1889 ?"@fr ;
+    tw:hasTranscript tw:transcript1 ;
+    tw:hasResponse tw:response1 .
+
+tw:transcript1 a tw:Transcript ;
+    rdfs:label "Transcription de la question"@fr ;
+    dcterms:description "Que s’est-il passé à Paris en 1889 ?"@fr .
+
+tw:event1 a tw:HistoricalEvent ;
+    rdfs:label "Exposition Universelle de 1889"@fr ;
+    tw:hasDate "1889-05-06"^^xsd:date ;
+    tw:hasLocation tw:paris ;
+    tw:imageURL <https://upload.wikimedia.org/wikipedia/commons/e/e6/Tour_Eiffel_1889.jpg> .
+
+tw:paris a tw:Location ;
+    rdfs:label "Paris"@fr ;
+    tw:geoCoordinates "48.8566, 2.3522" ;
+    tw:placeName "Paris" .
+
+tw:response1 a tw:Response ;
+    tw:summaryText "L'Exposition Universelle de 1889 s'est tenue à Paris pour célébrer le centenaire de la Révolution française. Elle a vu la construction de la Tour Eiffel."@fr ;
+    tw:generatedAt "2025-10-20T21:00:00"^^xsd:dateTime ;
+    tw:confidenceScore "0.98"^^xsd:float ;
+    tw:displayOnTimeline tw:timeline1 .
+
+tw:timeline1 a tw:Timeline ;
+    rdfs:label "Frise chronologique - Paris 1889"@fr .
