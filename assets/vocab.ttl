@@ -5,7 +5,7 @@
 @prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix o:       <http://omeka.org/s/vocabs/o#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
-@prefix tw:      <https://timewhisper.app/onto/tw#> .
+@prefix tw: <https://raw.githubusercontent.com/Zackbellaj/TimeWhisper/main/assets/vocab#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix ma:      <http://www.w3.org/ns/ma-ont#> .
 
