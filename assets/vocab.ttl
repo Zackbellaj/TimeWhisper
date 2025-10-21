@@ -9,12 +9,12 @@
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix ma:      <http://www.w3.org/ns/ma-ont#> .
 
-<https://timewhisper.app/onto/tw#> a owl:Ontology ;
+<https://raw.githubusercontent.com/Zackbellaj/TimeWhisper/main/assets/vocab.ttl> a owl:Ontology ;
     dcterms:title "TimeWhisper Ontology"@en ;
     dcterms:title "Ontologie TimeWhisper"@fr ;
     dcterms:creator "Bellaj Zakariae" ;
     dcterms:created "2025-10-20"^^xsd:date ;
-    dcterms:description "Vocabulaire RDF pour la modélisation des événements historiques, des sources, et des interactions vocales dans l’application TimeWhisper."@fr ;
+    dcterms:description "Vocabulaire RDF pour TimeWhisper."@fr ;
     owl:versionInfo "v0.1-experimental" ;
     dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> .
 
