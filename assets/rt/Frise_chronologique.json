@@ -1,0 +1,10 @@
+{
+    "o:label": "Frise chronologique",
+    "o:resource_template_property": [],
+    "o:resource_class": {
+        "vocabulary_namespace_uri": "https:\/\/raw.githubusercontent.com\/Zackbellaj\/TimeWhisper\/main\/assets\/vocab#",
+        "vocabulary_label": "TimeWhisper",
+        "local_name": "Timeline",
+        "label": "Frise chronologique"
+    }
+}
