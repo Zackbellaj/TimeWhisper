@@ -1,0 +1,155 @@
+/* --- Global Reset & Body --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: #fff;
+    background-color: #343a40; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+/* --- Header & Navigation --- */
+.app-header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #495057;
+    padding-bottom: 15px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo-link img {
+    margin-right: 10px;
+}
+
+/* --- Main Content Grid (Remplacement de Row/Col) --- */
+.main-content-grid {
+    display: flex;
+    flex-grow: 1; 
+    border: 1px solid #495057; 
+}
+
+.sidebar {
+    flex: 0 0 30%; 
+    padding: 20px;
+    border-right: 1px solid #495057;
+    text-align: left;
+}
+
+.recording-area {
+    flex: 1; 
+    padding: 20px;
+    text-align: center;
+}
+
+.section-title {
+    color: #f8f9fa;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+/* --- Contrôles et Formulaire --- */
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-label {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #ced4da;
+}
+
+#sltEnqueteur, #sltInterlocuteur, .status-display {
+    padding: 8px;
+    border: 1px solid #495057;
+    background-color: #495057;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.status-display {
+    font-weight: bold;
+    text-align: center;
+}
+
+/* --- Boutons d'Action --- */
+.record-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.btn i {
+    margin-right: 5px;
+}
+
+.btn-record { background-color: #dc3545; color: white; }
+.btn-stop { background-color: #ffc107; color: #333; } 
+.btn-submit { background-color: #28a745; color: white; } 
+
+.btn:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* --- Clips Audio --- */
+.sound-clips {
+    margin-top: 30px;
+    text-align: left;
+    padding: 10px;
+    border-top: 1px solid #495057;
+}
+
+.clips-title {
+    color: #adb5bd;
+    margin-bottom: 10px;
+}
+
+.clip {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #495057;
+    border-radius: 4px;
+}
+
+.clip audio {
+    width: 100%;
+    margin-top: 5px;
+}
