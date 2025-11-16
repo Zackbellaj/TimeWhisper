@@ -93,6 +93,13 @@ tw:hasLocation a rdf:Property ;
     rdfs:domain tw:HistoricalEvent ;
     rdfs:range tw:Location ;
     vs:term_status "experimental" .
+    
+tw:userAudioFile a rdf:Property ;
+    rdfs:label "Fichier audio utilisateur"@fr ;
+    rdfs:label "User Audio File"@en ;
+    rdfs:domain tw:UserQuery ;
+    rdfs:range xsd:anyURI ;
+    vs:term_status "experimental" .
 
 tw:involvesPerson a rdf:Property ;
     rdfs:label "implique la personne"@fr ;
